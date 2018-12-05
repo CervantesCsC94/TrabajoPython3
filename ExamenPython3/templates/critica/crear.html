@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="container">
+<form method="POST">
+
+	<h1>Crear</h1>
+	{% csrf_token %}
+
+	Nombre Usuario:
+	<input class="form-control" type="text" name="user">
+	Titulo:
+	<input class="form-control" type="text" name="titulo"><br>
+	Categoria:
+	{{form.categoria}}<br><br>
+
+	<textarea  class="form-control"  name="contenido" >  </textarea>
+	<br>
+
+	<a class="btn btn-primary" href="{% url 'critica:categorias_view' %}">Cancelar<a>
+	<input class="btn btn-primary" type="submit" value="Crear">
+
+</form>
+</div>
+{% endblock %}

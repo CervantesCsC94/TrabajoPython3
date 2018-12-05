@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Categorias{% endblock %}
+
+{% block script %}
+
+
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="container" style="margin-top: 20px;">
+<h1 style="text-align: center;">Categorias</h1><br>
+
+	
+
+		
+		
+
+		<div class="row" style="margin: auto; box-shadow: #999 0px 10px 10px; padding: 20px;">
+
+			
+			{% for categoria in object_list %}
+			<a href="{% url 'critica:criticas_view' categoria.id %}"  class="col-md-6 block" style="border: 1px solid; height: 100px; width: 90%; margin-bottom: 20px; text-decoration: none; color: white;">
+			
+				{{categoria.categoria}}
+			
+			</a>
+			{% endfor %}
+			
+			
+			<a href="{% url 'critica:crear_view' %}">Crear</a>	
+		</div>
+
+
+
+		
+		<div class="container" id="criticas"></div>	
+
+	   	
+	 
+
+	 
+		 
+</div><!--AQUI TERMINA LA CARTA-->
+
+
+  
+{% endblock %}
